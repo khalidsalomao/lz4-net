@@ -93,8 +93,8 @@
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>copy "$(SolutionDir)Release\lz4X86.dll" "$(TargetDir)"
-copy "$(SolutionDir)x64\Release\lz4X64.dll" "$(TargetDir)"</PreBuildEvent>
+    <PreBuildEvent>copy "$(SolutionDir)LZ4Dll\bin\Release\Win32\lz4X86.dll" "$(TargetDir)"
+copy "$(SolutionDir)LZ4Dll\bin\Release\x64\lz4X64.dll" "$(TargetDir)"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
