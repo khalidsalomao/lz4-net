@@ -123,10 +123,13 @@ namespace Lz4Net
         /// <param name="length">The length.</param>
         /// <param name="mode">The compression mode [Fast, HighCompression].</param>
         /// <returns>The compressed byte array</returns>
+        /// <exception cref="ArgumentOutOfRangeException">If length if outside data array bounds</exception>
         public static byte[] CompressBytes (byte[] data, int offset, Int32 length, Lz4Mode mode)
         {
+            if (length > data.Length)
+                throw new ArgumentOutOfRangeException ("length");
             byte[] buffer = null;
-            int sz = Compress (data, 0, data.Length, ref buffer, mode);
+            int sz = Compress (data, 0, length, ref buffer, mode);
             // adjust final array size
             byte[] finalBuffer = new byte[sz];
             System.Buffer.BlockCopy (buffer, 0, finalBuffer, 0, sz);
@@ -241,9 +244,9 @@ namespace Lz4Net
         public static string DecompressString (string compressedText)
         {
             // get string as bytes
-            byte[] gzBuffer = Convert.FromBase64String (compressedText);
+            byte[] buffer = Convert.FromBase64String (compressedText);
             // decompress
-            byte[] uncompressed = DecompressBytes (gzBuffer);
+            byte[] uncompressed = DecompressBytes (buffer);
             // convert to base 64 to allow general use of the string
             return Encoding.UTF8.GetString (uncompressed);
         }
