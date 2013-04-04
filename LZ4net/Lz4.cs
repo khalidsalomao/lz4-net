@@ -9,22 +9,22 @@ namespace Lz4Net
     {
         #region ** 32 Bit DllImports **
 
-        [DllImport ("lz4X86.dll", EntryPoint = "dll_LZ4_compress", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport ("x86\\lz4X86.dll", EntryPoint = "dll_LZ4_compress", CallingConvention = CallingConvention.Cdecl)]
         private static extern Int32 LZ4_compress_x86 (byte* source, byte* destination, Int32 size);
-        [DllImport ("lz4X86.dll", EntryPoint = "dll_LZ4_compressHC", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport ("x86\\lz4X86.dll", EntryPoint = "dll_LZ4_compressHC", CallingConvention = CallingConvention.Cdecl)]
         private static extern Int32 LZ4_compressHC_x86 (byte* source, byte* destination, Int32 size);
-        [DllImport ("lz4X86.dll", EntryPoint = "dll_LZ4_uncompress", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport ("x86\\lz4X86.dll", EntryPoint = "dll_LZ4_uncompress", CallingConvention = CallingConvention.Cdecl)]
         private static extern Int32 LZ4_uncompress_x86 (byte* source, byte* destination, Int32 size);        
 
         #endregion
 
         #region ** 64 Bit DllImports **
 
-        [DllImport ("lz4X64.dll", EntryPoint = "dll_LZ4_compress", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport ("x64\\lz4X64.dll", EntryPoint = "dll_LZ4_compress", CallingConvention = CallingConvention.Cdecl)]
         private static extern Int32 LZ4_compress_x64 (byte* source, byte* destination, Int32 size);
-        [DllImport ("lz4X64.dll", EntryPoint = "dll_LZ4_compressHC", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport ("x64\\lz4X64.dll", EntryPoint = "dll_LZ4_compressHC", CallingConvention = CallingConvention.Cdecl)]
         private static extern Int32 LZ4_compressHC_x64 (byte* source, byte* destination, Int32 size);
-        [DllImport ("lz4X64.dll", EntryPoint = "dll_LZ4_uncompress", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport ("x64\\lz4X64.dll", EntryPoint = "dll_LZ4_uncompress", CallingConvention = CallingConvention.Cdecl)]
         private static extern Int32 LZ4_uncompress_x64 (byte* source, byte* destination, Int32 size);
 
         #endregion
