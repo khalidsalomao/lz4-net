@@ -19,37 +19,37 @@ Lz4.Net implement some helpers methods for compression and decompression that ke
 If you prefer to avoid this small overhead, you can use the Lz4 native methods.
 
 <h3>Simple byte[] compression</h3>
-{{{
+```csharp
 
 // out data:  some byte array
 byte[] buffer = Encoding.UTF8.GetBytes ("large text");
 // compress
 byte[] compressed = Lz4Net.Lz4.CompressBytes (buffer, 0, buffer.Length, Lz4Net.Lz4Mode.Fast);
 
-}}}
+```
 
 <h3>Simple byte[] decompression</h3>
-{{{
+```csharp
 
 // decompress
 byte[] buffer = Lz4Net.Lz4.DecompressBytes (compressed);
 
-}}}
+```
 
 <h3>String Compression Helpers</h3>
 These help functions will compress the string bytes and return a base 64 encoded string.
-{{{
+```csharp
 
 // compress
 string compressed = Lz4Net.Lz4.CompressString ("large text");
 
 // decompress
 string uncompressed = Lz4Net.Lz4.DecompressString (compressed);
-}}}
+```
 
 <h3>Exposed native methods</h3>
 
-{{{
+```csharp
 unsafe
 {
     // compress 
@@ -86,7 +86,7 @@ unsafe
 
 }
 
-}}}
+```
 
 
 <h3>Streams</h3>
@@ -94,7 +94,7 @@ unsafe
 <i>Lz4CompressionStream</i> to handle compression.<br/>
 <i>Lz4DecompressionStream</i>  to handle decompression.
 
-{{{
+```csharp
 
 // create file
 using (var stream = new Lz4CompressionStream (new FileStream (filename, FileMode.Create), 1 << 18, Lz4Mode.HighCompression, true))
@@ -112,4 +112,4 @@ using (var stream = new Lz4DecompressionStream (new FileStream (filename, FileMo
     }
 }
 
-}}}
+```
