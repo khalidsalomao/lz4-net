@@ -2,7 +2,7 @@ lz4-net
 =======
 <h1>Lz4.Net is a wrapper of the Lz4 lib</h1>
 
-Lz4 Project: [https://code.google.com/p/lz4/]<br/>
+Lz4 Project: [http://cyan4973.github.io/lz4/]<br/>
 Lastest Lz4 version: [https://code.google.com/p/lz4/source/detail?r=94 r94]
 
 <h2>Lz4 Compression Algorithm</h2>
