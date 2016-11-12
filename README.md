@@ -113,3 +113,7 @@ using (var stream = new Lz4DecompressionStream (new FileStream (filename, FileMo
 }
 
 ```
+
+## License
+http://opensource.org/licenses/BSD-3-Clause
+
