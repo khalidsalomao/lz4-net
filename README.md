@@ -19,6 +19,7 @@ Lz4.Net implement some helpers methods for compression and decompression that ke
 If you prefer to avoid this small overhead, you can use the Lz4 native methods.
 
 <h3>Simple byte[] compression</h3>
+
 ```csharp
 
 // out data:  some byte array
@@ -29,6 +30,7 @@ byte[] compressed = Lz4Net.Lz4.CompressBytes (buffer, 0, buffer.Length, Lz4Net.L
 ```
 
 <h3>Simple byte[] decompression</h3>
+
 ```csharp
 
 // decompress
@@ -38,6 +40,7 @@ byte[] buffer = Lz4Net.Lz4.DecompressBytes (compressed);
 
 <h3>String Compression Helpers</h3>
 These help functions will compress the string bytes and return a base 64 encoded string.
+
 ```csharp
 
 // compress
